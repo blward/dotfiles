@@ -1,10 +1,10 @@
 #█▓▒░ aliases
 alias config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
-alias l="ls -hF --color=auto"
-alias ll="ls -lahF --color=auto"
+alias ls="exa -abghHlS"
 alias vim="nvim"
 alias e="$EDITOR"
 alias se="sudo $EDITOR"
+alias ffind="find * -type f | fzf > selected"
 
 #git
 alias gc="git commit -m"
@@ -25,3 +25,4 @@ alias tmx="tmux kill-session"
 
 #overrides
 alias systemctl="sudo systemctl"
+alias grep="rg -uuu"

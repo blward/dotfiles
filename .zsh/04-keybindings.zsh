@@ -1,4 +1,5 @@
 #█▓▒░ keybindings
+source /usr/share/fzf/shell/key-bindings.zsh
 typeset -A key
 
 key[Home]=${terminfo[khome]}
@@ -22,9 +23,6 @@ key[PageDown]=${terminfo[knp]}
 [[ -n "${key[Right]}"    ]]  && bindkey  "${key[Right]}"    forward-char
 [[ -n "${key[PageUp]}"   ]]  && bindkey  "${key[PageUp]}"   beginning-of-buffer-or-history
 [[ -n "${key[PageDown]}" ]]  && bindkey  "${key[PageDown]}" end-of-buffer-or-history
-
-bindkey '^r' history-incremental-search-backward
-bindkey '^R' history-incremental-pattern-search-backward
 
 if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
 	function zle-line-init () {
