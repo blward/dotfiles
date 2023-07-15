@@ -7,6 +7,9 @@ local opts = { silent = true }
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 
+--Disable recording
+keymap("", "q", "<Nop>", opts)
+
 -- Modes
 --   normal_mode = "n",
 --   insert_mode = "i",
@@ -16,10 +19,6 @@ vim.g.mapleader = " "
 --   command_mode = "c",
 
 -- Normal --
--- Fast Save/Quit
-keymap("n", "<leader>q", ":q<CR>", opts)
-keymap("n", "<leader>w", ":w<CR>", opts)
-
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
@@ -46,7 +45,7 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 
 -- Close buffers
-keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
+keymap("n", "<S-q>", "<cmd>bdelete!<CR>", opts)
 
 -- Insert --
 -- Press jk fast to exit insert mode
@@ -71,13 +70,21 @@ keymap("n", "<leader>gf", ":Telescope git_files<CR>", opts)
 keymap("n", "<leader>grf", ":Telescope live_grep<CR>", opts)
 
 -- Git
-keymap("n", "<leader>gs", "<cmd>:Git status<CR>", opts)
-keymap("n", "<leader>hd", "<cmd>:Gitsigns diffthis<CR>", opts)
-keymap("n", "<leader>hD", "<cmd>:Gitsigns diffthis ~1<CR>", opts)
-
--- Lsp
-keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<CR>", opts)
+keymap("n", "<leader>gs", "<cmd>:Git<CR>", opts)
+keymap("n", "<leader>gvd", "<cmd>:Gvdiffsplit!<CR>", opts)
+keymap("n", "<leader>gd", "<cmd>:Gitsigns diffthis<CR>", opts)
+keymap("n", "<leader>gtd", "<cmd>:Gitsigns toggle_deleted<CR>", opts)
+keymap("n", "<leader>gtb", "<cmd>:Gitsigns toggle_current_line_blame<CR>", opts)
 
 -- Harpoon
 keymap("n", "<leader>ha", "<cmd>lua require'harpoon.mark'.add_file()<CR>")
 keymap("n", "<C-e>", "<cmd>lua require'harpoon.ui'.toggle_quick_menu()<CR>")
+keymap("n", "<leader>1", "<cmd>lua require'harpoon.ui'.nav_file(1)<CR>")
+keymap("n", "<leader>2", "<cmd>lua require'harpoon.ui'.nav_file(2)<CR>")
+keymap("n", "<leader>3", "<cmd>lua require'harpoon.ui'.nav_file(3)<CR>")
+keymap("n", "<leader>4", "<cmd>lua require'harpoon.ui'.nav_file(4)<CR>")
+keymap("n", "<leader>5", "<cmd>lua require'harpoon.ui'.nav_file(5)<CR>")
+keymap("n", "<leader>6", "<cmd>lua require'harpoon.ui'.nav_file(6)<CR>")
+keymap("n", "<leader>7", "<cmd>lua require'harpoon.ui'.nav_file(7)<CR>")
+keymap("n", "<leader>8", "<cmd>lua require'harpoon.ui'.nav_file(8)<CR>")
+keymap("n", "<leader>9", "<cmd>lua require'harpoon.ui'.nav_file(9)<CR>")

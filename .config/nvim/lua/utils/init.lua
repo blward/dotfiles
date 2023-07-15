@@ -5,7 +5,7 @@ M.servers = {
     "cssls",
     "html",
     "tsserver",
-    "pyright",
+    "pylsp",
     "bashls",
     "jsonls",
     "yamlls",
